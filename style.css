@@ -1,42 +1,313 @@
-:root{--bg:#f5f7fb;--card:#fff;--primary:#0b4b6f;--accent:#00a896;--muted:#6b7a8a;}
-*{box-sizing:border-box}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#123;padding:0;margin:0}
-.container{max-width:1100px;margin:0 auto;padding:20px}
-.site-header{background:linear-gradient(90deg,var(--primary),#083646);color:white;padding:14px 0;position:sticky;top:0;z-index:40;box-shadow:0 6px 18px rgba(8,20,30,0.08)}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:60px;height:36px;border-radius:6px;object-fit:cover}
-.brand-text h1{font-size:18px;margin:0;letter-spacing:0.2px}
-.brand-text p{font-size:12px;margin:0;opacity:0.9}
-.nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin:0 12px;font-weight:600}
-.menu-btn{display:none;background:none;border:none;color:white;font-size:20px}
-.hero{background:linear-gradient(180deg,rgba(0,168,150,0.08),transparent);padding:48px 0}
-.hero-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.hero-content h2{font-size:28px;color:var(--primary);margin-bottom:8px}
-.btn-primary{background:var(--accent);color:white;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;margin-right:8px;border:none}
-.btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
-.subjects-section{padding:30px 0}
-.section-title{font-size:22px;color:var(--primary);margin-bottom:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(16,24,32,0.06);border:1px solid rgba(10,20,30,0.03)}
-.card h3{margin-bottom:10px;color:var(--primary);font-size:18px}
-.chapter-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px dashed #efefef}
-.chapter-info{display:flex;flex-direction:column;max-width:72%}
-.ch-title{font-size:14px;color:var(--muted);margin-top:4px}
-.chapter-actions{display:flex;gap:8px;align-items:center}
-.btn-download,.btn-view{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;margin-left:8px}
-.btn-download{background:var(--primary);color:white}
-.btn-view{background:transparent;border:1px solid #ddd;color:var(--primary)}
-.note{margin-top:12px;font-size:13px;color:var(--muted)}
-.features-list{list-style:disc;padding-left:20px;color:var(--muted)}
-.site-footer{background:#072227;color:#cfe9e3;padding:30px 0;margin-top:40px}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
-.company h4{margin:0 0 6px 0}
-.socials a{margin-right:10px;color:white;font-size:20px;text-decoration:none}
-.contact a{color:#eaf6f2;text-decoration:none}
-.contact-form-wrap{background:rgba(255,255,255,0.03);padding:18px;margin-top:18px;border-radius:8px}
-.form-row{margin-bottom:10px}
-input,textarea{width:100%;padding:10px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:white}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.6)}
-.form-note{font-size:12px;color:rgba(255,255,255,0.6)}
-copyright{display:block;text-align:center;margin-top:12px;color:#bcd7d3}
-@media(max-width:800px){.hero-inner{flex-direction:column;text-align:center}.nav{display:none}.menu-btn{display:block} .footer-inner{flex-direction:column}}
+:root{--bg:#f7f7f7;--card:#fff;--primary:#0b4b6f;--accent:#00a896;--muted:#6b7a8a;}
+*{box-sizing:border-box}
+body{
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:var(--bg);
+    color:#123;
+    padding:0;
+    margin:0
+}
+
+/* Base Container */
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px; /* Reduced padding from 20px to 0 20px for better control */
+}
+
+/* --- Header Styling for Notes Gallery Look (Overrides) --- */
+.site-header{
+    background: #fff; /* White background */
+    border-bottom: 3px solid #ddd; /* Bottom border for separation */
+    padding: 8px 0;
+    position: relative; /* Menu positioning ke liye zaroori */
+    top: 0;
+    z-index: 40;
+    box-shadow: none; 
+}
+
+.header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px; /* Center alignment */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.brand, .brand-text {
+    /* Hiding your original brand text */
+    display: none;
+}
+
+.notes-gallery-header {
+    display: flex;
+    align-items: center;
+}
+
+.notes-gallery-title {
+    font-size: 26px; 
+    font-weight: 700;
+    color: #4CAF50; /* Green color */
+    margin: 0;
+    padding-left: 5px; 
+    font-family: Arial, sans-serif; 
+}
+
+/* Search Bar Styling */
+.notes-gallery-search {
+    flex-grow: 1; 
+    margin: 0 20px;
+    max-width: 400px;
+}
+
+.notes-gallery-search input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    background: #f0f0f0;
+    color: #333;
+}
+
+.notes-gallery-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-money {
+    font-size: 24px;
+    color: goldenrod;
+    margin-right: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: block; 
+    background: none;
+    border: none;
+    color: #333; /* Dark icon color */
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* --- CSE 2nd Year Notes Title Section (Black Bar) --- */
+.cse-title-section {
+    background: #000; /* Black background */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: -20px; /* Top se thoda upar adjust karne ke liye */
+}
+
+.cse-notes-heading {
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.oe-notice {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.oe-highlight {
+    color: #FFC107; /* Yellowish color for OE */
+    font-weight: 700;
+}
+
+/* --- Subject Gallery Grid Styling --- */
+.subjects-section, .subjects-gallery-section {
+    padding: 40px 15px;
+    background: var(--bg); /* Use light background */
+}
+
+/* Hide original section title */
+.section-title {
+    display: none; 
+}
+
+.notes-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columns on desktop */
+    gap: 25px;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.subject-card {
+    background: var(--card);
+    border: 3px solid #4893e1; /* Blue border */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; 
+    min-height: 250px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.subject-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000; 
+    order: 2; 
+    margin-top: auto; /* Push title down a bit */
+}
+
+.notes-icon {
+    /* Placeholder icon styling */
+    color: #4893e1;
+    font-size: 50px; 
+    height: 100px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    order: 1; 
+    /* Yahan aap notepad ki image ka background-image property use kar sakte hain */
+}
+.notes-icon::before {
+    content: "📝"; /* Simple notepad emoji as placeholder */
+    font-size: 40px;
+}
+
+
+.availability {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #4CAF50; 
+    border-radius: 0 0 7px 7px; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+}
+
+.oe-card {
+    border-color: #f7b447; /* OE card ke liye yellow border */
+}
+
+.oe-explore {
+    color: #f7b447; 
+    font-weight: 700;
+}
+
+.more-options-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.more-options-btn {
+    font-size: 24px;
+    padding: 5px 20px;
+    border: 2px solid #333;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- Vertical Mobile Menu Styling --- */
+.mobile-nav {
+    display: none; /* JS se toggle hoga */
+    position: absolute; 
+    top: 55px; /* Adjust based on header height (approx 55px) */
+    right: 15px; /* Right side se open hoga */
+    width: 200px; 
+    background: #072227; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    z-index: 50;
+    flex-direction: column; /* VERTICAL alignment ke liye */
+    border-radius: 8px; /* Thoda rounding */
+    padding: 5px 0;
+}
+
+.mobile-nav a {
+    color: #cfe9e3; 
+    text-decoration: none;
+    padding: 12px 18px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: block; 
+    text-align: left;
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+
+/* --- Footer adjustments (Keep original look) --- */
+.site-footer{
+    background:#072227;
+    color:#cfe9e3;
+    padding:30px 0;
+    margin-top:40px
+}
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:flex-start;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+/* --- Media Queries (Responsive Adjustments) --- */
+@media(max-width:800px){
+    /* Header adjustments for small screens */
+    .header-inner {
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+    .notes-gallery-search {
+        order: 3; 
+        margin: 10px 0;
+        width: 100%;
+        max-width: none;
+    }
+    .notes-gallery-icons {
+        order: 2;
+    }
+    .notes-gallery-header {
+        order: 1;
+    }
+    .menu-btn {
+        margin-left: 10px;
+    }
+
+    /* Grid adjustments for small screens */
+    .notes-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 2 columns on mobile */
+        gap: 15px;
+    }
+    
+    .mobile-nav {
+        right: 10px;
+        width: 180px;
+    }
+}
