@@ -3,230 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Notes</title>
+<title>Notes Gallery - CSE 2nd Year Notes</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="assets/logo.png" alt="logo" class="logo">
-      <div class="brand-text"><h1>B.Tech CSE</h1><p>2nd Year</p></div>
-    </div>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-btn" id="menuBtn"><i class="fa fa-bars"></i></button>
-  </div>
+  <div class="container header-inner">
+    <div class="brand notes-gallery-header">
+      <h1 class="notes-gallery-title">Notes Gallery</h1>
+    </div>
+    <div class="notes-gallery-search">
+      <input type="text" placeholder="Type to start searching...">
+    </div>
+    <div class="notes-gallery-icons">
+        <span class="icon-money">$</span>
+        <button class="menu-btn" id="menuBtn"><i class="fa fa-bars"></i></button>
+    </div>
+  </div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<section id="home" class="hero">
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <h2>Organised, syllabus-aligned notes for AKTU CSE 2nd Year</h2>
-      <p>Download chapter-wise notes built from the official AKTU syllabus (clean, fast, and mobile friendly).</p>
-    </div>
-    <div class="hero-cta">
-      <a href="#subjects" class="btn-primary">Explore Subjects</a>
-      <a href="#contact" class="btn-outline">Contact</a>
-    </div>
-  </div>
+<section class="cse-title-section">
+    <div class="container">
+        <h2 class="cse-notes-heading">CSE 2nd YEAR NOTES</h2>
+        <p class="oe-notice">This page also contains <strong class="oe-highlight">OPEN ELECTIVE</strong> subject notes scroll down and click on -->> <strong class="oe-highlight">OE</strong> option.</p>
+    </div>
 </section>
 
-<section id="subjects" class="container subjects-section">
-  <h2 class="section-title">Subjects & Chapters</h2>
-  <div class="grid">
-<article class="card"><h3>Cyber Security</h3><div class="chapters"><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 1</strong><span class="ch-title">Introduction to Cyber Security & Threat Landscape</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/cyber_security/Unit1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/cyber_security/Unit1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 2</strong><span class="ch-title">Cryptography Fundamentals and Applications</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/cyber_security/Unit2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/cyber_security/Unit2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 3</strong><span class="ch-title">Network Security & Secure Protocols</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/cyber_security/Unit3.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/cyber_security/Unit3.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 4</strong><span class="ch-title">Ethical Hacking Basics & Awareness</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/cyber_security/Unit4.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/cyber_security/Unit4.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 5</strong><span class="ch-title">Digital Forensics Overview</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/cyber_security/file1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/cyber_security/file1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div></div></article><article class="card"><h3>Maths4</h3><div class="chapters"><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 1</strong><span class="ch-title">Advanced Calculus & Multivariable Integration</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/maths4/Unit1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/maths4/Unit1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 2</strong><span class="ch-title">Probability & Random Variables</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/maths4/Unit2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/maths4/Unit2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 3</strong><span class="ch-title">Laplace & Fourier Transforms</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/maths4/Unit3.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/maths4/Unit3.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 4</strong><span class="ch-title">Numerical Methods and Approximations</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/maths4/Unit4.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/maths4/Unit4.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div></div></article><article class="card"><h3>Ds</h3><div class="chapters"><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 1</strong><span class="ch-title">Introduction, Arrays & Linked Lists (ADT)</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/ds/Unit1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/ds/Unit1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 2</strong><span class="ch-title">Stacks, Queues, Recursion & Hashing</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/ds/Unit2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/ds/Unit2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 3</strong><span class="ch-title">Searching & Sorting Algorithms</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/ds/Unit3.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/ds/Unit3.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 4</strong><span class="ch-title">Trees (BST, AVL) & Heaps</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/ds/Unit4.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/ds/Unit4.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 5</strong><span class="ch-title">Graphs: Representation & Traversal Algorithms</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/ds/Unit5.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/ds/Unit5.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div></div></article><article class="card"><h3>Coa</h3><div class="chapters"><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 1</strong><span class="ch-title">Digital Logic & Combinational Circuits</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/coa/Unit1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/coa/Unit1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 2</strong><span class="ch-title">Processor Organization & Register Transfer</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/coa/Unit2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/coa/Unit2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 3</strong><span class="ch-title">ALU, Arithmetic Algorithms & Floating Point</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/coa/Unit3.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/coa/Unit3.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 4</strong><span class="ch-title">Pipelining, Control Unit & Microarchitecture</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/coa/Unit4.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/coa/Unit4.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 5</strong><span class="ch-title">Memory Hierarchy, Cache & I/O Architectures</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/coa/dm2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/coa/dm2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div></div></article><article class="card"><h3>Human Values</h3><div class="chapters"><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 1</strong><span class="ch-title">Foundations of Human Values & Ethics</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/human_values/Unit1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/human_values/Unit1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 2</strong><span class="ch-title">Professional Ethics and Responsibilities</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/human_values/Unit2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/human_values/Unit2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 3</strong><span class="ch-title">Human Rights, Social Responsibility & Sustainability</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/human_values/Unit3.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/human_values/Unit3.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 4</strong><span class="ch-title">Case Studies and Application in Technology</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/human_values/Unit4.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/human_values/Unit4.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div></div></article><article class="card"><h3>Dstl</h3><div class="chapters"><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 1</strong><span class="ch-title">Set Theory, Relations & Functions</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/dstl/Unit1.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/dstl/Unit1.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 2</strong><span class="ch-title">Propositional & Predicate Logic, Inference</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/dstl/Unit2.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/dstl/Unit2.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 3</strong><span class="ch-title">Boolean Algebra & Switching Theory</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/dstl/Unit3.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/dstl/Unit3.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-  </div>
-</div><div class="chapter-row">
-  <div class="chapter-info"><strong>Unit 4</strong><span class="ch-title">Graph Theory, Trees & Combinatorics</span></div>
-  <div class="chapter-actions">
-    <a class="btn-download" href="notes/dstl/Unit4.pdf" download><i class="fa fa-download"></i> Download</a>
-    <a class="btn-view" href="notes/dstl/Unit4.pdf" target="_blank"><i class="fa fa-eye"></i> View</a>
-    </div>
-</div></div></article>
-  </div>
+<section id="subjects" class="container subjects-gallery-section">
+    <div class="notes-gallery-grid limited-grid">
+
+        <a href="#coa-notes" class="subject-card">
+            <h3 class="subject-title">COA</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability">Available</div>
+        </a>
+
+        <a href="#ds-notes" class="subject-card">
+            <h3 class="subject-title">DS</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability">Available</div>
+        </a>
+
+        <a href="#dstl-notes" class="subject-card">
+            <h3 class="subject-title">DSTL</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability">Available</div>
+        </a>
+
+        <a href="#math4-notes" class="subject-card">
+            <h3 class="subject-title">MATH-4</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability">Available</div>
+        </a>
+
+        <a href="#cyber-notes" class="subject-card">
+            <h3 class="subject-title">CYBER</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability">Available</div>
+        </a>
+
+        <a href="#uhv-notes" class="subject-card">
+            <h3 class="subject-title">UHV</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability">Available</div>
+        </a>
+        
+        <a href="#oe-notes" class="subject-card oe-card">
+            <h3 class="subject-title">OE</h3>
+            <div class="notes-icon">[Notes Icon]</div>
+            <div class="availability oe-explore">explore >>></div>
+        </a>
+
+    </div>
+
+    <div class="more-options-btn-container">
+        <button class="more-options-btn">...</button>
+    </div>
 </section>
 
 <footer id="contact" class="site-footer">
-  <div class="container footer-inner">
-    <div class="company">
-                </div>
-    <div class="socials">
-      <h5>Connect</h5>
-      <a href="https://instagram.com/yourhandle" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://linkedin.com/in/yourhandle" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="contact">
-      <h5>Contact</h5>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
-    </div>
-  </div>
+    <div class="container footer-inner">
+        <div class="company">
+            </div>
+        <div class="socials">
+            <h5>Connect</h5>
+            <a href="https://instagram.com/yourhandle" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourhandle" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="contact">
+            <h5>Contact</h5>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+        </div>
+    </div>
 
-  <div class="container copyright">
-    <p>&copy; 2025 B.Tech CSE — 2nd Year. All rights reserved.</p>
-  </div>
+    <div class="container copyright">
+        <p>&copy; 2025 B.Tech CSE — 2nd Year. All rights reserved.</p>
+    </div>
 </footer>
 
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
