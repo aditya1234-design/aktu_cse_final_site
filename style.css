@@ -40,12 +40,12 @@ body{
     display: none;
 }
 
-.notes-gallery-header {
+.notes-by-durgesh-header {
     display: flex;
     align-items: center;
 }
 
-.notes-gallery-title {
+.notes-by-durgesh-title {
     font-size: 26px; 
     font-weight: 700;
     color: #4CAF50; /* Green color */
@@ -55,13 +55,13 @@ body{
 }
 
 /* Search Bar Styling */
-.notes-gallery-search {
+.notes-by-durgesh-search {
     flex-grow: 1; 
     margin: 0 20px;
     max-width: 400px;
 }
 
-.notes-gallery-search input {
+.notes-by-durgesh-search input {
     width: 100%;
     padding: 8px 15px;
     border: 2px solid #ccc;
@@ -71,7 +71,7 @@ body{
     color: #333;
 }
 
-.notes-gallery-icons {
+.notes-by-durgesh-icons {
     display: flex;
     align-items: center;
 }
@@ -131,7 +131,7 @@ body{
     display: none; 
 }
 
-.notes-gallery-grid {
+.notes-by-durgesh-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columns on desktop */
     gap: 25px;
@@ -191,19 +191,7 @@ body{
 }
 
 
-.availability {
-    background-color: #f0f0f0;
-    border-top: 1px solid #ccc;
-    width: 100%;
-    padding: 10px 0;
-    font-size: 14px;
-    color: #4CAF50; 
-    border-radius: 0 0 7px 7px; 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-weight: 600;
-}
+
 
 .oe-card {
     border-color: #f7b447; /* OE card ke liye yellow border */
@@ -284,16 +272,16 @@ body{
         flex-wrap: wrap;
         padding: 0 10px;
     }
-    .notes-gallery-search {
+    .notes-by-durgesh-search {
         order: 3; 
         margin: 10px 0;
         width: 100%;
         max-width: none;
     }
-    .notes-gallery-icons {
+    .notes-by-durgesh-icons {
         order: 2;
     }
-    .notes-gallery-header {
+    .notes-by-durgesh-header {
         order: 1;
     }
     .menu-btn {
@@ -301,7 +289,7 @@ body{
     }
 
     /* Grid adjustments for small screens */
-    .notes-gallery-grid {
+    .notes-by-durgesh-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 2 columns on mobile */
         gap: 15px;
     }
