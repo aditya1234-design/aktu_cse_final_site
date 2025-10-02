@@ -2,21 +2,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var menuBtn = document.getElementById('menuBtn');
     var mobileNav = document.getElementById('mobileNav');
 
+    // Check karte hain ki dono elements (Menu Button aur Mobile Nav) HTML mein hain ya nahi.
     if (menuBtn && mobileNav) {
         menuBtn.addEventListener('click', function() {
-            // Check if the menu is currently visible (using computed style or inline style)
+            // Check karte hain ki menu abhi visible hai ya nahi (CSS styles ke through)
             var currentDisplay = window.getComputedStyle(mobileNav).display;
             
             if (currentDisplay === 'flex' || mobileNav.style.display === 'flex') {
-                // Agar open hai toh band kar do
+                // Agar open hai toh band kar do (hide)
                 mobileNav.style.display = 'none';
             } else {
-                // Agar band hai toh open kar do (CSS mein flex-direction: column hai)
+                // Agar band hai toh open kar do (show as flex column)
                 mobileNav.style.display = 'flex';
             }
         });
     }
 
-    // Aapke original contact form code ko hata diya gaya hai, 
-    // kyunki naye HTML mein contact form ka structure nahi hai.
+    // Naye HTML structure ke liye aur koi JavaScript functionality add karne ki zaroorat nahi hai.
+    // Download/View buttons aur Explore/Contact buttons pure HTML links hain (<a> tags).
 });
