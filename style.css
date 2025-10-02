@@ -376,7 +376,7 @@ body {
     }
 
     /* Red Social Section Responsive Fix */
-    .social-connect-section { padding: 40px 15px; }
+    .social-connect-section { padding: 150px 40px; }
     .social-connect-section .connect-text { font-size: 1.6rem; }
     .social-connect-section .social-icons { gap: 60px; }
     .social-connect-section .social-icons a { font-size: 3rem; }
