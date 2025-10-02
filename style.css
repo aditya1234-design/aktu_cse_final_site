@@ -6,9 +6,11 @@
     --muted: #6b7a8a;
     /* New theme colors for consistency */
     --teal: #00bfa5;
-    --red: #e50914;
+    --red: #e50914; /* Netflix Red */
     --dark-text: #333;
     --link-blue: #007bff;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -30,7 +32,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- Header Styling (Original Look Retained) --- */
+/* --- Header Styling --- */
 .site-header {
     background: #fff;
     border-bottom: 3px solid #ddd;
@@ -38,7 +40,7 @@ body {
     position: relative;
     top: 0;
     z-index: 40;
-    box-shadow: none;
+    box-shadow: 0 2px 4px var(--shadow-light);
 }
 
 .header-inner {
@@ -50,31 +52,17 @@ body {
     padding: 0 15px;
 }
 
-/* Original Brand Text should be visible (Removed 'display: none') */
-.brand {
-    display: block; /* Make sure the brand div is visible */
-}
-
-/* Hiding original brand text, but keeping the title visible */
-.brand-text {
-    display: none; 
-}
-
-.notes-by-durgesh-header {
-    display: flex;
-    align-items: center;
-}
+.brand { display: block; }
+.brand-text { display: none; }
 
 .notes-by-durgesh-title {
     font-size: 26px;
     font-weight: 700;
-    color: var(--primary); /* Original color ko green se primary blue/dark tone par set kiya */
+    color: var(--primary);
     margin: 0;
     padding-left: 5px;
-    font-family: Inter, system-ui, sans-serif;
 }
 
-/* Search Bar Styling */
 .notes-by-durgesh-search {
     flex-grow: 1;
     margin: 0 20px;
@@ -89,21 +77,16 @@ body {
     font-size: 16px;
     background: #f0f0f0;
     color: #333;
+    transition: border-color 0.3s;
+}
+.notes-by-durgesh-search input:focus {
+    border-color: var(--teal);
+    outline: none;
 }
 
 .notes-by-durgesh-icons {
     display: flex;
     align-items: center;
-}
-
-/* The $ icon is removed from HTML, but keeping the style just in case */
-.icon-money {
-    /* font-size: 24px;
-    color: goldenrod;
-    margin-right: 15px;
-    font-weight: bold;
-    cursor: pointer; */
-    display: none; /* Hide if element is still in HTML but should be invisible */
 }
 
 .menu-btn {
@@ -115,33 +98,24 @@ body {
     cursor: pointer;
 }
 
-/* --- CSE 2nd Year Notes Title Section (Black Bar - Top Content Area) --- */
+/* --- CSE 2nd Year Notes Title Section (Top Content Area) --- */
 .cse-title-section {
-    /* Background removed to match image style (assuming you want a light/white background here) */
-    background: #f0f8ff; /* Light blue/white background jaisa image mein hai */
-    color: var(--dark-text); /* Text color dark rakha */
+    background: #f0f8ff; 
+    color: var(--dark-text); 
     padding: 40px 0;
     text-align: center;
-    margin-top: 0;
+    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.02);
 }
 
 .cse-notes-heading {
     font-size: 2.2rem;
-    margin: 0 auto 10px;
-    text-transform: none; /* Uppercase removed */
     font-weight: 700;
-    letter-spacing: normal;
-    color: var(--primary); /* Dark Blue heading */
-    max-width: 700px;
+    color: var(--primary);
 }
 
 .oe-notice {
     font-size: 1.05rem;
     margin-top: 15px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .oe-highlight {
@@ -149,7 +123,7 @@ body {
     font-weight: 700;
 }
 
-/* --- NEW: Explore/Contact Buttons Styling --- */
+/* --- Explore/Contact Buttons Styling --- */
 .cse-title-section .button-group {
     display: flex;
     gap: 20px;
@@ -158,37 +132,50 @@ body {
 }
 
 .explore-btn, .contact-btn {
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px; /* Bigger padding */
+    border-radius: 8px; /* More rounded */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .explore-btn {
-    background-color: var(--teal); /* Green color from image */
+    background-color: var(--teal); 
     color: #ffffff;
-    border: 1px solid var(--teal);
+    border: none; /* No border for solid look */
+    box-shadow: 0 5px 15px rgba(0, 191, 165, 0.4); /* Stronger Shadow */
+}
+
+.explore-btn:hover {
+    background-color: #00a08e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 191, 165, 0.5);
 }
 
 .contact-btn {
     background-color: #ffffff;
     color: var(--dark-text);
-    border: 1px solid #999;
+    border: 2px solid #ccc; /* Solid border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 
-/* --- Subject Gallery Grid Styling (OLD styles removed/overridden) --- */
-.subjects-section, .subjects-gallery-section {
+/* --- Subjects & Chapters List Styles --- */
+.subjects-gallery-section {
     padding: 40px 15px;
     background: var(--bg);
-    /* Old grid styles removed as we are using a list-like structure now */
 }
 
-/* --- NEW: Subjects & Chapters List Styles (Matching Image Format) --- */
 .section-title {
-    display: block; /* Make the section title visible again */
+    display: block;
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 30px;
@@ -196,23 +183,22 @@ body {
     padding: 0 15px;
 }
 
-/* Subject grouping (e.g., Cyber Security, Maths4) */
 .subject-group {
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 25px;
+    border-radius: 12px; /* Nicer rounded corners */
+    margin-bottom: 35px;
     overflow: hidden;
+    box-shadow: 0 8px 20px var(--shadow-light); /* Prominent card shadow */
 }
 
 .subject-heading {
-    background-color: #f7f7f7;
-    color: var(--dark-text);
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 15px 20px;
-    margin: 0;
-    border-bottom: 1px solid #ddd;
+    background-color: #e6f7ff; 
+    color: var(--primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 18px 25px;
+    border-bottom: 2px solid #b3e0ff;
 }
 
 /* Individual Unit Card */
@@ -220,267 +206,178 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 18px 25px; /* Increased padding for spaciousness */
     border-bottom: 1px solid #eee;
     transition: background-color 0.2s ease;
 }
 
-.subject-group .unit-card:last-child {
-    border-bottom: none;
-}
-
 .unit-card:hover {
-    background-color: #fcfcfc;
-}
-
-.unit-info {
-    flex-grow: 1;
-    margin-right: 15px;
-}
-
-.unit-number {
-    font-weight: 700;
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: 3px;
-    margin-top: 0;
+    background-color: #fafafa; 
 }
 
 .unit-title {
-    font-weight: 400;
+    font-weight: 600;
     color: var(--dark-text);
-    font-size: 1rem;
-    line-height: 1.3;
-    margin: 0;
 }
 
-/* Download/View Action Buttons Container */
+/* --- Download/View Action Buttons (Actual Button Feel) --- */
 .unit-actions {
     display: flex;
-    gap: 10px;
+    gap: 12px; 
     flex-shrink: 0;
 }
 
 .action-btn {
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 0.85rem;
+    /* Base button style for actual button feel */
+    padding: 10px 18px; 
+    border-radius: 20px; /* Pill-shaped buttons */
+    font-size: 0.95rem;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    cursor: pointer;
+    border: none; /* No ugly border */
 }
 
+/* Download Button (Teal/Green) */
 .download-btn {
-    background-color: #279e8c;
+    background-color: var(--teal); 
     color: #ffffff;
-    border: none;
-}
-
-.view-btn {
-    background-color: #ffffff;
-    color: var(--dark-text);
-    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0, 191, 165, 0.3); /* Subtle button shadow */
 }
 
 .download-btn:hover {
-    background-color: #1f8a7a;
+    background-color: #00a08e;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 191, 165, 0.5);
+}
+
+/* View Button (Secondary/Outline style) */
+.view-btn {
+    background-color: #f8f8f8;
+    color: var(--primary); /* Use primary color for view button text */
+    border: 2px solid var(--primary); /* Border in primary color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .view-btn:hover {
-    background-color: #f0f0f0;
+    background-color: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 
-/* --- Vertical Mobile Menu Styling --- */
-.mobile-nav {
-    display: none;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    width: 200px;
-    background: #072227;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    z-index: 50;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 5px 0;
-}
-
-.mobile-nav a {
-    color: #cfe9e3;
-    text-decoration: none;
-    padding: 12px 18px;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: block;
-    text-align: left;
-}
-
-.mobile-nav a:last-child {
-    border-bottom: none;
-}
-
-/* --- OLD Footer (Removed as it's replaced by two new footer sections) --- */
-.site-footer{
-    display: none; /* Hide the old footer style */
-}
-
-/* --- NEW: White Contact Info Footer (Image 2 - Second Last Section) --- */
+/* --- NEW: White Contact Info Footer (Creative Look) --- */
 .site-footer-contact {
     background-color: #ffffff;
-    padding: 30px 20px 20px; /* Adjusted padding */
-    text-align: left;
+    padding: 40px 20px 20px; 
     width: 100%;
     box-sizing: border-box;
+    margin-top: 30px;
+    box-shadow: 0 -4px 15px var(--shadow-light); /* Shadow to lift it off the background */
 }
 
 .site-footer-contact .contact-info-container {
     max-width: 600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-bottom: 20px; /* Space above copyright */
+    gap: 20px;
+    padding-bottom: 30px; 
 }
 
 .site-footer-contact .contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .site-footer-contact .contact-label {
-    color: #000000;
     font-weight: 700;
-    margin-right: 15px;
-    min-width: 70px;
-    text-align: left;
+    min-width: 80px;
 }
 
 .site-footer-contact .contact-value {
     color: var(--link-blue);
-    text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .site-footer-contact .copyright p {
-    color: #666;
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 0;
+    color: #888;
+    font-size: 0.85rem;
 }
+
 
 /* --- NEW: Social Connect Section (Red Block - At the very bottom) --- */
 .social-connect-section {
-    background-color: var(--red);
-    padding: 60px 20px;
-    text-align: center;
+    background-color: var(--red); /* Deep Red Background */
+    padding: 60px 20px; 
     width: 100%;
     box-sizing: border-box;
 }
 
-.social-connect-section .connect-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .social-connect-section .connect-text {
     color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    line-height: 1.2;
-    text-align: center;
+    font-size: 2rem; 
+    font-weight: 800;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px var(--shadow-medium); /* Text Shadow for depth */
 }
 
 .social-connect-section .social-icons {
-    display: flex;
-    gap: 40px;
-    align-items: center;
+    gap: 50px;
 }
 
 .social-connect-section .social-icons a {
     color: #ffffff;
-    font-size: 3.5rem;
-    transition: color 0.3s ease;
-    text-decoration: none;
+    font-size: 4rem; 
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+.social-connect-section .social-icons a:hover {
+    color: #ffcccc; 
+    transform: scale(1.1) rotate(5deg); /* Slight rotation for extra flair */
+}
+
 
 /* --- Media Queries (Responsive Adjustments) --- */
 @media(max-width:800px) {
-    /* Header adjustments for small screens (Retained) */
-    .header-inner {
-        flex-wrap: wrap;
-        padding: 0 10px;
-    }
-    .notes-by-durgesh-search {
-        order: 3;
-        margin: 10px 0;
-        width: 100%;
-        max-width: none;
-    }
-    .notes-by-durgesh-icons {
-        order: 2;
-    }
-    .notes-by-durgesh-header {
-        order: 1;
-    }
-    .menu-btn {
-        margin-left: 10px;
-    }
+    /* Header adjustments */
+    .header-inner { flex-wrap: wrap; }
+    .notes-by-durgesh-search { order: 3; }
     
-    /* Subject Card Responsive Fix (Matching new list format) */
+    .cse-notes-heading { font-size: 1.8rem; }
+
+    /* Unit Card Responsive Fix */
     @media (max-width: 550px) {
         .unit-card {
             flex-direction: column;
             align-items: flex-start;
+            padding: 15px 15px;
         }
+        .subject-heading { font-size: 1.3rem; }
 
-        .unit-info {
-            margin-bottom: 15px;
-            margin-right: 0;
-        }
+        .unit-info { margin-bottom: 15px; }
 
         .unit-actions {
             width: 100%;
             justify-content: space-between;
+            gap: 10px;
         }
 
         .action-btn {
             flex: 1;
+            max-width: 48%; 
             justify-content: center;
+            padding: 10px 10px; /* Reduced padding on small screen */
+            font-size: 0.85rem;
         }
     }
 
     /* Red Social Section Responsive Fix */
-    .social-connect-section {
-        padding: 40px 15px;
-    }
-    .social-connect-section .connect-text {
-        font-size: 1.4rem;
-    }
-    .social-connect-section .social-icons a {
-        font-size: 2.8rem;
-    }
-
-    /* White Footer Responsive Fix */
-    @media (max-width: 500px) {
-        .site-footer-contact .contact-item {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .site-footer-contact .contact-label {
-            margin-right: 0;
-            margin-bottom: 2px;
-            min-width: unset;
-        }
-    }
+    .social-connect-section { padding: 40px 15px; }
+    .social-connect-section .connect-text { font-size: 1.6rem; }
+    .social-connect-section .social-icons { gap: 30px; }
+    .social-connect-section .social-icons a { font-size: 3rem; }
 }
